@@ -12,9 +12,12 @@
 
 ActiveRecord::Schema.define(version: 2020_11_21_221511) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "game_purchase_platforms", force: :cascade do |t|
-    t.integer "game_purchase_id", null: false
-    t.integer "platform_id", null: false
+    t.bigint "game_purchase_id", null: false
+    t.bigint "platform_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["game_purchase_id", "platform_id"], name: "index_game_purchase_platforms_on_game_purchase_and_platform", unique: true
@@ -26,7 +29,7 @@ ActiveRecord::Schema.define(version: 2020_11_21_221511) do
     t.text "comments"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "user_id"
+    t.bigint "user_id"
     t.index ["user_id"], name: "index_game_purchases_on_user_id"
   end
 

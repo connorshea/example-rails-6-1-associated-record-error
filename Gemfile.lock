@@ -115,6 +115,7 @@ GEM
     nio4r (2.5.4)
     nokogiri (1.10.10)
       mini_portile2 (~> 2.4.0)
+    pg (1.2.3)
     puma (5.0.4)
       nio4r (~> 2.0)
     rack (2.2.3)
@@ -146,7 +147,6 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sqlite3 (1.4.2)
     thor (1.0.1)
     tilt (2.0.10)
     tzinfo (2.0.3)
@@ -162,10 +162,10 @@ PLATFORMS
 DEPENDENCIES
   byebug
   listen (~> 3.2)
+  pg (~> 1.1)
   puma (~> 5.0)
   rails!
   sass-rails (>= 6)
-  sqlite3 (~> 1.4)
   tzinfo-data
 
 RUBY VERSION
