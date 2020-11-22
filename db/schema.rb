@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_21_221511) do
+ActiveRecord::Schema.define(version: 2020_11_21_220748) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,8 +29,6 @@ ActiveRecord::Schema.define(version: 2020_11_21_221511) do
     t.text "comments"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "user_id"
-    t.index ["user_id"], name: "index_game_purchases_on_user_id"
   end
 
   create_table "platforms", force: :cascade do |t|
@@ -39,14 +37,6 @@ ActiveRecord::Schema.define(version: 2020_11_21_221511) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "users", force: :cascade do |t|
-    t.text "username"
-    t.text "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   add_foreign_key "game_purchase_platforms", "game_purchases", on_delete: :cascade
   add_foreign_key "game_purchase_platforms", "platforms", on_delete: :cascade
-  add_foreign_key "game_purchases", "users"
 end

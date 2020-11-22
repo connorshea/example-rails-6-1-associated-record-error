@@ -12,12 +12,8 @@ puts "Creating Game Purchases..."
   Platform.create!(name: name)
 end
 
-['Phil', 'Tom', 'Alex', 'Jane', 'John'].each do |name|
-  User.find_or_create_by!(name: name, username: name.downcase)
-end
-
-# Create a game purchase for each user
-User.all.each do |user|
+# Create 5 game purchases
+5.times do
   platforms = []
   rand(0..3).times.each do
     platforms << Platform.find(rand(1..Platform.count))
@@ -26,7 +22,6 @@ User.all.each do |user|
 
   begin
     GamePurchase.find_or_create_by!(
-      user: user,
       comments: 'foo',
       platforms: platforms
     )
