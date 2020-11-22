@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', github: 'rails/rails', branch: '6-1-stable'
+gem 'rails', '~> 6.0.3'
 # Use pg as the database for Active Record
 gem 'pg', '~> 1.1'
 # Use Puma as the app server
