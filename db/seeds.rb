@@ -20,12 +20,8 @@ end
   end
   platforms.uniq!
 
-  begin
-    GamePurchase.find_or_create_by!(
-      comments: 'foo',
-      platforms: platforms
-    )
-  rescue ActiveRecord::RecordInvalid => e
-    puts "Error: #{e}"
-  end
+  GamePurchase.find_or_create_by!(
+    comments: 'foo',
+    platforms: platforms
+  )
 end
