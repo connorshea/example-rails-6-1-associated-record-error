@@ -16,7 +16,6 @@ end
   User.find_or_create_by!(name: name, username: name.downcase)
 end
 
-puts User.all.inspect
 # Create a game purchase for each user
 User.all.each do |user|
   platforms = []
@@ -25,7 +24,6 @@ User.all.each do |user|
   end
   platforms.uniq!
 
-  puts GamePurchase.all.inspect
   begin
     GamePurchase.find_or_create_by!(
       user: user,
