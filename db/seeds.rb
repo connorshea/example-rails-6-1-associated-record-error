@@ -14,11 +14,7 @@ end
 
 # Create 5 game purchases
 5.times do
-  platforms = []
-  rand(0..3).times.each do
-    platforms << Platform.find(rand(1..Platform.count))
-  end
-  platforms.uniq!
+  platforms = Platform.first(rand(1..3)).uniq
 
   GamePurchase.find_or_create_by!(
     comments: 'foo',
