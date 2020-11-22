@@ -6,7 +6,8 @@ You'll see that when you run `bundle exec rails db:seed`, it fails.
 
 - Clone repo with `git clone https://github.com/connorshea/example-rails-6-1-associated-record-error`
 - `bundle install`
-- `bundle exec rails db:migrate` (will need Postgres)
+- `bundle exec rails db:create` (will need Postgres)
+- `bundle exec rails db:migrate`
 - `bundle exec rails db:seed` to trigger the failure
 
 If you switch to the `rails-6-0` branch, `bundle install` and re-run `bundle exec rails db:seed`, it won't fail.
